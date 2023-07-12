@@ -44,7 +44,7 @@ const GET_FILMS = gql`query getCinemaToday {
 export default function Affiche() {
   const allFilms = useQuery(GET_FILMS);
   if (allFilms.data){
-    console.log(allFilms.data)
+    console.log(allFilms.data.getCinemaToday.films)
   }
   return <>
     <h3 className={styles.title}>АФИША</h3>
