@@ -73,3 +73,23 @@
   max-width: 350px;
   font-size: 14px;
 }
+
+.btn_group {
+  padding-top: 20px;
+}
+
+.landing_btn_buy {
+  background-color: #fff;
+  width: 120px;
+  height: 40px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.landing_btn_watch {
+  background-color: transparent;
+  color: #fff;
+  width: 120px;
+  height: 40px;
+  border-radius: 8px;
+}
