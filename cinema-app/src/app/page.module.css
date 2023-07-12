@@ -21,13 +21,24 @@
   line-height: 24px;
 }
 
+.nav_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav {
   margin-top: 24px;
   margin-bottom: 24px;
-  margin-left: 120px;
-  margin-right: 120px;
+  margin-left: 20px;
+  margin-right: 20px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 640px;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
 }
