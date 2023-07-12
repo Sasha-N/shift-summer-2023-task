@@ -41,4 +41,15 @@
 .container {
   display: block;
   margin: 0 auto;
+  max-width: 1000px;
+  min-height: 100%;
+}
+
+.back_image {
+  position: absolute;
+  margin-left: -500px;
+}
+
+.about_block {
+  position: relative;
 }

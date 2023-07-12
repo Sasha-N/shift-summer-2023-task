@@ -10,11 +10,17 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <Image
-          src={witcher}
-          style={mainImageStyle}
-          width={1100}
-          alt="image"></Image>
+        <div className={styles.back_image}>
+          <Image
+            src={witcher}
+            style={mainImageStyle}
+            width={1100}
+            objectFit="cover"
+            alt="image"/>
+          </div>
+        <div className={styles.about_block}>
+          <span className={styles.date}>АПРЕЛЬ, 2023</span>
+        </div>
       </div>
     </main>
   )
