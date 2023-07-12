@@ -20,6 +20,10 @@ export default function Home() {
           </div>
         <div className={styles.about_block}>
           <span className={styles.date}>АПРЕЛЬ, 2023</span>
+          <br />
+          <span className={styles.subtitle}>Окунись в мир кино</span>
+          <br />
+          <span className={styles.subscription}>В нашем кинотеатре вы проведёте незабываемые вечера со своими любимыми героями. На сайте представлен широкий выбор фильмов разных жанров. Заказ и бронирование билетов онлайн.</span>
         </div>
       </div>
     </main>
