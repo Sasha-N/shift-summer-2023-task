@@ -18,7 +18,6 @@ export default function Home() {
             src={witcher}
             style={mainImageStyle}
             width={1100}
-            objectFit="cover"
             alt="image"/>
           </div>
         <div className={styles.about_block}>
@@ -26,7 +25,7 @@ export default function Home() {
           <br />
           <span className={styles.subtitle}>Окунись в мир кино</span>
           <br />
-          <span className={styles.subscription}>В нашем кинотеатре вы проведёте незабываемые вечера со своими любимыми героями. На сайте представлен широкий выбор фильмов разных жанров. Заказ и бронирование билетов онлайн.</span>
+          <p className={styles.subscription}>В нашем кинотеатре вы проведёте незабываемые вечера со своими любимыми героями. На сайте представлен широкий выбор фильмов разных жанров. Заказ и бронирование билетов онлайн.</p>
           <div className={styles.btn_group}>
           <button className={styles.landing_btn_buy} onClick={() => router.push('/pages/affiche')}>Купить билет</button>
           <button className={styles.landing_btn_watch}>Смотреть ролик</button>
