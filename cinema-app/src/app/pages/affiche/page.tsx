@@ -1,6 +1,15 @@
 'use client'
 import styles from './page.module.css'
 import { gql, useQuery } from "@apollo/client";
+import Card from './card';
+
+interface filmCard { genre: string, 
+  release: string, 
+  path: string, 
+  name: string, 
+  original_name: string, 
+  imdb: string, 
+  kinopoisk: string }
 
 const GET_FILMS = gql`query getCinemaToday {
   getCinemaToday {
@@ -43,28 +52,39 @@ const GET_FILMS = gql`query getCinemaToday {
 
 export default function Affiche() {
   const allFilms = useQuery(GET_FILMS);
-  let genre = '';
-  let release = '';
-  let name = '';
+
+
+  let cards: filmCard[] = [];
   if (allFilms.data) {
-    console.log(allFilms.data.getCinemaToday.films)
-    genre = allFilms.data.getCinemaToday.films[0].genres[0];
-    release = allFilms.data.getCinemaToday.films[0].releaseDate;
-    name = allFilms.data.getCinemaToday.films[0].name
+    for (let i = 0; i <  allFilms.data.getCinemaToday.films.length; i++) {
+
+      let card: filmCard = {
+        genre: '', 
+        release: '', 
+        path: '', 
+        name: '', 
+        original_name: '', 
+        imdb: '', 
+        kinopoisk: '' 
+      };
+
+      card.genre = allFilms.data.getCinemaToday.films[i].genres[0];
+      card.release = allFilms.data.getCinemaToday.films[i].releaseDate;
+      card.path = allFilms.data.getCinemaToday.films[i].img;
+      card.name = allFilms.data.getCinemaToday.films[i].name;
+      card.original_name = allFilms.data.getCinemaToday.films[i].originalName;
+      card.imdb = allFilms.data.getCinemaToday.films[i].userRatings.imdb;
+      card.kinopoisk = allFilms.data.getCinemaToday.films[i].userRatings.kinopoisk;
+      cards.push(card);
+    }
   }
   return <>
     <h3 className={styles.title}>АФИША</h3>
     <h4 className={styles.subtitle}><a className={styles.link}>сегодня</a> в прокате</h4>
-    <div className={styles.container_card}>
-      <div className={styles.label}><p className={styles.genre}>{genre}</p><p className={styles.release}>{release}</p></div>
-      <div className={styles.cover}></div>
-      <div className={styles.description}>
-        <p className={styles.name}>{name}</p>
-        <p className={styles.original_name}>{name}</p>
-        <p className={styles.rating}>IMDB: {name}</p>
-        <p className={styles.rating}>Kinopoisk - {name}</p>
-        <button className={styles.detail}>Подробнее</button>
-      </div>
+    <div className={styles.container}>
+    {
+       cards.map(card => <Card {...card} />)
+    }
     </div>
   </>
 }
