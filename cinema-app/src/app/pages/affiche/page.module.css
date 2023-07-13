@@ -22,7 +22,7 @@
     font-weight: 500;
     line-height: 36px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
     color: #585858;
 }
 
@@ -67,8 +67,7 @@
     width: 212px;
     height: 288px;
     border-radius: 8px;
-    background: var(--label);
-    /*background: url(<path-to-image>), lightgray 50% / cover no-repeat;*/
+    background-size: 100% 100%;
 }
 
 .description {

@@ -70,7 +70,7 @@ export default function Affiche() {
 
       card.genre = allFilms.data.getCinemaToday.films[i].genres[0];
       card.release = allFilms.data.getCinemaToday.films[i].releaseDate;
-      card.path = allFilms.data.getCinemaToday.films[i].img;
+      card.path = "https://shift-backend.onrender.com" + allFilms.data.getCinemaToday.films[i].img;
       card.name = allFilms.data.getCinemaToday.films[i].name;
       card.original_name = allFilms.data.getCinemaToday.films[i].originalName;
       card.imdb = allFilms.data.getCinemaToday.films[i].userRatings.imdb;

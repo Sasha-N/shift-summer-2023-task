@@ -9,9 +9,13 @@ interface filmCard { genre: string,
     kinopoisk: string }
 
 export default function Card(filmCard: filmCard) {
+    const style = {
+        background: "url(" + filmCard.path + ")" + ", lightgray 50% / cover no-repeat",
+        backgroundSize: "100% 100%",
+    }
     return <div className={styles.container_card}>
         <div className={styles.label}><p className={styles.genre}>{filmCard.genre}</p><p className={styles.release}>{filmCard.release}</p></div>
-        <div className={styles.cover}></div>
+        <div className={styles.cover} style={style}></div>
         <div className={styles.description}>
             <p className={styles.name}>{filmCard.name}</p>
             <p className={styles.original_name}>{filmCard.original_name}</p>
