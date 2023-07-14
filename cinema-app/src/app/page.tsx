@@ -27,7 +27,7 @@ export default function Home() {
           <br />
           <p className={styles.subscription}>В нашем кинотеатре вы проведёте незабываемые вечера со своими любимыми героями. На сайте представлен широкий выбор фильмов разных жанров. Заказ и бронирование билетов онлайн.</p>
           <div className={styles.btn_group}>
-          <button className={styles.landing_btn_buy} onClick={() => router.push('/pages/affiche')}>Купить билет</button>
+          <button className={styles.landing_btn_buy} onClick={() => router.push('/affiche')}>Купить билет</button>
           <button className={styles.landing_btn_watch}>Смотреть ролик</button>
           </div>
         </div>
