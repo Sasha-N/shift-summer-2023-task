@@ -24,7 +24,7 @@ export default function Card(filmCard: filmCard) {
             <p className={styles.original_name}>{filmCard.original_name}</p>
             <p className={styles.rating}>IMDB: {filmCard.imdb}</p>
             <p className={styles.rating}>Kinopoisk - {filmCard.kinopoisk}</p>
-            <Link className={styles.detail} href={{ pathname: '/movie/' + filmCard.id, query: { id: filmCard.id } }}>Подробнее</Link>
+            <Link className={styles.detail} href={{ pathname: '/movie/', query: { id: filmCard.id } }}>Подробнее</Link>
         </div>
     </div>;
 }

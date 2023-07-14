@@ -80,7 +80,6 @@ export default function Affiche() {
       card.imdb = allFilms.data.getCinemaToday.films[i].userRatings.imdb;
       card.kinopoisk = allFilms.data.getCinemaToday.films[i].userRatings.kinopoisk;
       cards.push(card);
-      console.log(card)
     }
   }
   return <>
