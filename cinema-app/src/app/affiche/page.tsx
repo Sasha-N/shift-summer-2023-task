@@ -3,7 +3,9 @@ import styles from './page.module.css'
 import { gql, useQuery } from "@apollo/client";
 import Card from './card';
 
-interface filmCard { genre: string, 
+interface filmCard { 
+  id: string,
+  genre: string, 
   release: string, 
   path: string, 
   name: string, 
@@ -59,6 +61,7 @@ export default function Affiche() {
     for (let i = 0; i <  allFilms.data.getCinemaToday.films.length; i++) {
 
       let card: filmCard = {
+        id: '',
         genre: '', 
         release: '', 
         path: '', 
@@ -68,6 +71,7 @@ export default function Affiche() {
         kinopoisk: '' 
       };
 
+      card.id = allFilms.data.getCinemaToday.films[i].id;
       card.genre = allFilms.data.getCinemaToday.films[i].genres[0];
       card.release = allFilms.data.getCinemaToday.films[i].releaseDate;
       card.path = "https://shift-backend.onrender.com" + allFilms.data.getCinemaToday.films[i].img;
@@ -76,6 +80,7 @@ export default function Affiche() {
       card.imdb = allFilms.data.getCinemaToday.films[i].userRatings.imdb;
       card.kinopoisk = allFilms.data.getCinemaToday.films[i].userRatings.kinopoisk;
       cards.push(card);
+      console.log(card)
     }
   }
   return <>

@@ -1,6 +1,8 @@
 import styles from './page.module.css'
 
-interface filmCard { genre: string, 
+interface filmCard { 
+    id: string,
+    genre: string, 
     release: string, 
     path: string, 
     name: string, 
