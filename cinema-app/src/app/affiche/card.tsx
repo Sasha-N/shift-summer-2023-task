@@ -1,4 +1,5 @@
 import styles from './page.module.css'
+import Link from 'next/link'
 
 interface filmCard { 
     id: string,
@@ -23,7 +24,7 @@ export default function Card(filmCard: filmCard) {
             <p className={styles.original_name}>{filmCard.original_name}</p>
             <p className={styles.rating}>IMDB: {filmCard.imdb}</p>
             <p className={styles.rating}>Kinopoisk - {filmCard.kinopoisk}</p>
-            <button className={styles.detail}>Подробнее</button>
+            <Link className={styles.detail} href={{ pathname: '/movie/' + filmCard.id, query: { id: filmCard.id } }}>Подробнее</Link>
         </div>
     </div>;
 }
