@@ -1,0 +1,22 @@
+:root {
+
+  --background-color: #FFF6F0;
+
+  --red-button: #E74848;
+  --blue-button: #4656E9;
+  --purple-button: #B448E7;
+  --red-disable-button: #F55A5A;
+  --red-blue-button: #B2B9FD;
+  --red-purple-button: #E2A4FF;
+  --border-button: #252525;
+  --label:  #B89E9E;
+}
+
+html,
+body {
+  background-color: var(--background-color);
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+
